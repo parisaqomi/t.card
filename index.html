@@ -240,8 +240,6 @@
   .btn-primary:hover{ background:#c90818; box-shadow:none; }
   .magnetic{ transform:none!important; transition:none; }
   .hero-bg{ background:var(--color-secondary); }
-  .hero-card-art{ width:min(100%,400px); margin:0; padding:12px; border-radius:24px; background:#f1f2f3; box-shadow:0 24px 50px rgba(0,0,0,.18); }
-  .hero-card-art img{ display:block; width:100%; height:auto; border-radius:15px; }
   header .glass{ background:rgba(6,15,33,.94)!important; border-color:rgba(255,255,255,.12)!important; }
   .header-brand-mark{ display:flex; flex:0 0 64px; align-items:center; justify-content:center; width:64px; height:36px; }
   .header-brand-mark img{ display:block; width:100%; height:100%; object-fit:contain; }
@@ -309,10 +307,34 @@
         </div>
       </div>
 
-      <div class="order-1 lg:order-2 flex justify-center reveal-scale" style="transition-delay:.2s">
-        <figure class="hero-card-art">
-          <img src="assets/travel-card-reference.png" alt="کارت سفر قرمز با طرح‌های نمادین سفر و قابلیت پرداخت بدون تماس">
-        </figure>
+      <div class="order-1 lg:order-2 flex justify-center card-stage reveal-scale" style="transition-delay:.2s">
+        <div class="card-tilt w-[280px] sm:w-[340px] lg:w-[380px] relative">
+          <div class="rounded-[26px] p-6 sm:p-7 relative overflow-hidden depth-card" style="aspect-ratio: 1.586/1; background: linear-gradient(135deg, #14203c 0%, var(--color-secondary) 45%, #1c2f57 100%); box-shadow: 0 30px 60px -20px rgba(0,0,0,0.55);">
+            <div class="absolute inset-0 opacity-40" style="background: linear-gradient(120deg, rgba(255,255,255,0.12) 0%, transparent 35%);"></div>
+            <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full opacity-30" style="background: radial-gradient(circle, var(--color-primary), transparent 70%);"></div>
+            <div class="relative h-full flex flex-col justify-between" role="img" aria-label="نمای کارت پرمیوم توریست کارت به رنگ سرمه‌ای با جزئیات قرمز">
+              <div class="flex items-start justify-between">
+                <span class="font-latin font-semibold text-white text-[15px] sm:text-base tracking-wide">TOURIST CARD</span>
+                <span class="w-9 h-7 rounded-md" style="background: linear-gradient(135deg, #d4af6a, #f3e2b3);"></span>
+              </div>
+              <div class="font-latin text-white/90 text-base sm:text-lg tracking-[0.14em]">5412&nbsp;89••&nbsp;••••&nbsp;3327</div>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p class="text-white/45 text-[9px] uppercase tracking-widest mb-1">Cardholder</p>
+                  <p class="font-latin text-white/90 text-xs sm:text-sm">TURKEY ACCESS</p>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="w-6 h-6 rounded-full opacity-90" style="background: var(--color-primary);"></span>
+                  <span class="w-6 h-6 rounded-full opacity-90 -mr-3" style="background: var(--color-accent);"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="glass absolute -bottom-5 -left-6 rounded-2xl px-4 py-3 float-slow" style="border-color: rgba(255,255,255,0.2);">
+            <p class="text-white text-[11px] font-bold">پذیرش در سراسر ترکیه</p>
+            <p class="text-gray-300 text-[10px]">هتل · رستوران · تاکسی · عابربانک</p>
+          </div>
+        </div>
       </div>
     </div>
 
