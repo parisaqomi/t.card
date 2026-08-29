@@ -607,8 +607,7 @@
       </div>
 
       <div class="glass rounded-[28px] p-6 sm:p-9 reveal-scale" style="border-color: rgba(255,255,255,0.14);">
-        <!-- NOTE: replace action="#" with real backend endpoint when available -->
-        <form class="space-y-5" action="#" method="post">
+        <form id="leadForm" class="space-y-5" novalidate>
           <div>
             <label for="fullname" class="block text-sm font-bold mb-2 text-white">نام و نام خانوادگی</label>
             <input type="text" id="fullname" name="fullname" required autocomplete="name"
@@ -621,12 +620,10 @@
               class="w-full h-12 rounded-xl px-4 text-sm text-white placeholder:text-gray-400 bg-white/10 border border-white/15 focus:border-transparent focus:ring-2 focus:ring-[#ED071A] outline-none transition"
               placeholder="۰۹xxxxxxxxx">
           </div>
-          <button type="submit" class="magnetic btn-primary w-full rounded-xl font-bold text-base mt-2">
+          <button type="submit" id="submitBtn" class="magnetic btn-primary w-full rounded-xl font-bold text-base mt-2 disabled:cursor-wait disabled:opacity-70">
             درخواست مشاوره رایگان
           </button>
-          <p class="text-[11px] text-gray-400 text-center leading-6">
-            با ارسال فرم، شما با شرایط و قوانین توریست کارت موافقت می‌کنید.
-          </p>
+          <p id="statusMsg" class="min-h-5 text-center text-sm font-medium" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -754,6 +751,52 @@
     }, { threshold: 0.6 });
     counters.forEach(el => cObserver.observe(el));
   }
+
+  /* ---------- Lead form submission ---------- */
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz9y65TCZjzczPZlpcZUf4FtGamMrah4whwZdihpiLRw2FXsBGSwU08MVwikxvyEDMyaw/exec';
+  const leadForm = document.getElementById('leadForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const statusMsg = document.getElementById('statusMsg');
+
+  leadForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!leadForm.reportValidity()) return;
+
+    const initialButtonLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'در حال ارسال…';
+    statusMsg.textContent = '';
+
+    const payload = {
+      name: leadForm.fullname.value.trim(),
+      email: '',
+      phone: leadForm.mobile.value.trim()
+    };
+
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' }
+      });
+      const result = await response.json();
+
+      if (result.status !== 'success') {
+        throw new Error(result.message || 'خطا در ثبت اطلاعات');
+      }
+
+      statusMsg.className = 'min-h-5 text-center text-sm font-medium text-emerald-300';
+      statusMsg.textContent = 'اطلاعات با موفقیت ثبت شد!';
+      leadForm.reset();
+    } catch (error) {
+      console.error('Lead form submission failed:', error);
+      statusMsg.className = 'min-h-5 text-center text-sm font-medium text-red-300';
+      statusMsg.textContent = 'ارسال با خطا مواجه شد. لطفاً دوباره تلاش کنید.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = initialButtonLabel;
+    }
+  });
 
 </script>
 
