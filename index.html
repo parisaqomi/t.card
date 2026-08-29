@@ -73,7 +73,16 @@
   .kinetic.is-visible .word:nth-child(8) .word-inner{ transition-delay: .49s; }
   .kinetic.is-visible .word:nth-child(9) .word-inner{ transition-delay: .55s; }
   .kinetic.is-visible .word-inner{ transform: translateY(0); opacity:1; }
-  .hero-word-underline{ border-bottom: 2px solid #fff; padding-bottom: .08em; }
+  .hero-word-underline{
+    position:relative; padding:0 .05em .18em; border-bottom:1px solid rgba(255,255,255,.38);
+  }
+  .hero-word-underline::after{
+    content:""; position:absolute; right:.05em; bottom:-3px; width:78%; height:4px; border-radius:999px;
+    background:linear-gradient(90deg, #fff 0 68%, var(--color-accent) 68% 100%);
+    box-shadow:0 2px 12px rgba(255,59,78,.55); transform-origin:right center;
+    animation: heroUnderline 1.05s cubic-bezier(.19,1,.22,1) .42s both;
+  }
+  @keyframes heroUnderline{ from{transform:scaleX(0);opacity:0} to{transform:scaleX(1);opacity:1} }
 
   /* ============ Buttons ============ */
   .btn-primary{
