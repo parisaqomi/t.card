@@ -48,9 +48,9 @@
   }
 
   /* ============ Fluid editorial type scale ============ */
-  .fluid-hero{ font-size: clamp(2.35rem, 1.1rem + 4.2vw, 5.6rem); line-height: 1.14; letter-spacing: -0.01em; }
-  .fluid-h2{ font-size: clamp(1.7rem, 0.9rem + 2.4vw, 3.4rem); line-height: 1.18; }
-  .fluid-stat{ font-size: clamp(4.5rem, 2rem + 9vw, 11rem); line-height: 0.9; }
+  .fluid-hero{ font-size:23px; line-height: 1.14; letter-spacing: -0.01em; }
+  .fluid-h2{ font-size:23px; line-height: 1.18; }
+  .fluid-stat{ font-size:23px; line-height: 0.9; }
   .measure{ max-width: 42ch; }
   .measure-wide{ max-width: 56ch; }
 
@@ -185,7 +185,7 @@
   .watermark{
     position:absolute; font-family:'Space Grotesk', sans-serif; font-weight:700;
     color: rgba(11,31,58,0.05); pointer-events:none; user-select:none; z-index:0;
-    font-size: clamp(6rem, 14vw, 14rem); line-height:1;
+    font-size:23px; line-height:1;
   }
 
   /* ============ Flip cards (process — desktop only, progressive enhancement) ============ */
@@ -253,7 +253,7 @@
   .layout-hero > .hero-layout{ max-width:1280px!important; grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr)!important; gap:4.5rem!important; }
   .layout-hero .hero-copy{ position:relative; padding:1rem 0 1rem 3.5rem; }
   .layout-hero .hero-copy::before{ content:""; position:absolute; top:0; bottom:0; left:0; width:1px; background:rgba(255,255,255,.17); }
-  .layout-hero .fluid-hero{ max-width:700px; font-size:clamp(3rem,5.6vw,5.8rem); line-height:1.02; letter-spacing:-.045em; }
+  .layout-hero .fluid-hero{ max-width:700px; font-size:23px; line-height:1.02; letter-spacing:-.045em; }
   .layout-hero .hero-card-zone{ justify-content:flex-start!important; }
   .layout-hero .card-tilt{ width:min(100%,440px)!important; transform:rotate(-7deg); }
   .layout-hero .card-tilt > div:first-child{ border-radius:22px!important; }
@@ -318,7 +318,7 @@
   .redesign-2026 .layout-hero > .hero-layout{ min-height:680px; max-width:1160px!important; grid-template-columns:minmax(0,1fr) minmax(360px,.88fr)!important; gap:4rem!important; align-items:center; }
   .redesign-2026 .layout-hero .hero-copy{ padding:1rem 0!important; border:0; }
   .redesign-2026 .layout-hero .hero-copy::before{ display:none; }
-  .redesign-2026 .layout-hero .fluid-hero{ max-width:650px; font-size:clamp(2.9rem,4.25vw,4.8rem); line-height:1.1; letter-spacing:-.045em; margin-bottom:1.55rem!important; }
+  .redesign-2026 .layout-hero .fluid-hero{ max-width:650px; font-size:23px; line-height:1.1; letter-spacing:-.045em; margin-bottom:1.55rem!important; }
   .redesign-2026 .layout-hero .hero-copy > p{ max-width:40rem; margin-bottom:2.25rem!important; font-size:clamp(1.05rem,1.25vw,1.28rem)!important; line-height:2.05!important; color:rgba(255,255,255,.78)!important; }
   .redesign-2026 .layout-hero .hero-trust{ width:fit-content; max-width:100%; margin-top:3.4rem!important; padding:1.05rem 1.25rem; border:1px solid rgba(255,255,255,.14); border-radius:18px; background:rgba(255,255,255,.045); }
   .redesign-2026 .layout-hero .hero-card-zone{ position:relative; min-height:470px; align-items:center; justify-content:center!important; }
@@ -337,7 +337,7 @@
   .redesign-2026 .journey-steps{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; padding:12px; border-radius:30px; border:1px solid rgba(11,31,58,.12); background:rgba(11,31,58,.055); }
   .redesign-2026 .journey-steps article{ min-height:205px; padding:1.8rem!important; border-radius:20px!important; border:1px solid transparent!important; box-shadow:none!important; justify-content:space-between; }
   .redesign-2026 .journey-steps article:nth-child(3){ border-color:rgba(255,255,255,.1)!important; }
-  .redesign-2026 .journey-steps article span{ font-size:2.35rem!important; line-height:1; }
+  .redesign-2026 .journey-steps article span{ font-size:23px!important; line-height:1; }
   .redesign-2026 .journey-steps article div{ align-self:flex-end; }
 
   .redesign-2026 main > section:nth-of-type(3){ margin:20px; padding-top:7rem!important; padding-bottom:7rem!important; border-radius:38px; background:#fff; }
@@ -382,7 +382,7 @@
     .redesign-2026 .form-layout > div:first-child{ padding-left:0; border-left:0; }
   }
   @media (max-width:639px){
-    .redesign-2026 .layout-hero .fluid-hero{ font-size:clamp(2.35rem,9.6vw,3.1rem); }
+    .redesign-2026 .layout-hero .fluid-hero{ font-size:23px; }
     .redesign-2026 .layout-hero .hero-copy > p{ font-size:1.1rem!important; line-height:1.9!important; }
     .redesign-2026 .layout-hero .hero-trust{ width:100%; gap:.8rem; padding:1rem; justify-content:center!important; }
     .redesign-2026 .layout-hero .hero-trust > div:nth-child(5),.redesign-2026 .layout-hero .hero-trust > div:nth-child(4){ display:none!important; }
@@ -503,28 +503,28 @@
 
         <div class="journey-steps space-y-5">
           <article class="reveal group flex gap-6 sm:gap-8 items-start p-6 sm:p-8 rounded-3xl border border-gray-100 depth-card">
-            <span class="font-latin font-black text-4xl sm:text-5xl flex-shrink-0" style="color: transparent; -webkit-text-stroke: 1.5px rgba(11,31,58,0.18);">01</span>
+            <span class="font-latin font-black text-[23px] flex-shrink-0" style="color: transparent; -webkit-text-stroke: 1.5px rgba(11,31,58,0.18);">01</span>
             <div>
               <h3 class="font-extrabold text-lg sm:text-xl mb-2" style="color: var(--color-secondary);">ثبت‌نام سریع</h3>
               <p class="text-gray-500 text-sm leading-7 measure-wide">تکمیل فرم آنلاین</p>
             </div>
           </article>
           <article class="reveal group flex gap-6 sm:gap-8 items-start p-6 sm:p-8 rounded-3xl border border-gray-100 depth-card" style="transition-delay:.1s">
-            <span class="font-latin font-black text-4xl sm:text-5xl flex-shrink-0" style="color: transparent; -webkit-text-stroke: 1.5px rgba(11,31,58,0.18);">02</span>
+            <span class="font-latin font-black text-[23px] flex-shrink-0" style="color: transparent; -webkit-text-stroke: 1.5px rgba(11,31,58,0.18);">02</span>
             <div>
               <h3 class="font-extrabold text-lg sm:text-xl mb-2" style="color: var(--color-secondary);">صدور کارت</h3>
               <p class="text-gray-500 text-sm leading-7 measure-wide">ارسال مدارک و صدور با هماهنگی کارشناسان ما</p>
             </div>
           </article>
           <article class="reveal group flex gap-6 sm:gap-8 items-start p-6 sm:p-8 rounded-3xl text-white depth-card" style="transition-delay:.2s; background: linear-gradient(135deg, var(--color-secondary), #14294d);">
-            <span class="font-latin font-black text-4xl sm:text-5xl flex-shrink-0 text-gradient">03</span>
+            <span class="font-latin font-black text-[23px] flex-shrink-0 text-gradient">03</span>
             <div>
               <h3 class="font-extrabold text-lg sm:text-xl mb-2">شارژ آنلاین</h3>
               <p class="text-gray-300 text-sm leading-7 measure-wide">پرداخت ریالی در درگاه امن.</p>
             </div>
           </article>
           <article class="reveal group flex gap-6 sm:gap-8 items-start p-6 sm:p-8 rounded-3xl border border-gray-100 depth-card" style="transition-delay:.3s">
-            <span class="font-latin font-black text-4xl sm:text-5xl flex-shrink-0" style="color: transparent; -webkit-text-stroke: 1.5px rgba(11,31,58,0.18);">04</span>
+            <span class="font-latin font-black text-[23px] flex-shrink-0" style="color: transparent; -webkit-text-stroke: 1.5px rgba(11,31,58,0.18);">04</span>
             <div>
               <h3 class="font-extrabold text-lg sm:text-xl mb-2" style="color: var(--color-secondary);">تحویل و سفر</h3>
               <p class="text-gray-500 text-sm leading-7 measure-wide">دریافت کارت و شروع خرید در ترکیه.</p>
